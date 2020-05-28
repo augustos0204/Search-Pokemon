@@ -27,7 +27,7 @@ Nesta você pode pesquisar todo o tipo de pokemon que quiser, basta digitar o no
 Além do mais, ao carregar a página você terá em vista pokemons do 1 ao 100 na pokedex.
 
 # Consumindo a API
-Para consumir a API foi necessário a url "https://pokeapi.co/api/v2/pokemon/{id or name}/", onde podemos utilizar tanto o id quanto o nome do pokemon para pesquisar
+Para consumir a API foi necessário a url "https://pokeapi.co/api/v2/pokemon/{id_or_name}/", onde podemos utilizar tanto o id quanto o nome do pokemon para pesquisar
 
 ## codificação
 Primeiro, em uma função assíncrona, dentro de um laço que ia de 1 a 100, eu criei uma variável chamada "url", que recebeu a url da api utilizado o contador do laço para captar o id do pokemon, exemplo com pokemon id = 1:
