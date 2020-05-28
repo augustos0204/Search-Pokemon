@@ -1,6 +1,6 @@
 "use-strict";
 
-const exibeDados = (name, img, health, attack, defense, speed, shiny) => {
+const exibeDados = (pokemon) => {
     const pagina = document.getElementById('containerPagina');
     const card = document.createElement('div');
     const buttonFlip = document.createElement('div');
@@ -10,11 +10,11 @@ const exibeDados = (name, img, health, attack, defense, speed, shiny) => {
         <div class="cardFront">
             <div class="pokemonIconeContainer">
                 <figure class="pokemonIcone">
-                    <img src="${img}" alt="pokemon" title="pokemon">
+                    <img src="${pokemon.img}" alt="pokemon" title="pokemon">
                 </figure>
             </div>
             <div class="pokemonNome">
-                ${name}
+                ${pokemon.name}
             </div>
             <div class="buttonFlip">
                 <div class="buttonIcon">
@@ -29,7 +29,7 @@ const exibeDados = (name, img, health, attack, defense, speed, shiny) => {
                         Health:
                     </div>
                     <div class="statsValues">
-                        ${health}
+                        ${pokemon.vida}
                     </div>
                 </div>
                 <div class="pokemonAttack pokemonStats">
@@ -37,7 +37,7 @@ const exibeDados = (name, img, health, attack, defense, speed, shiny) => {
                         Attack:
                     </div>
                     <div class="statsValues">
-                        ${attack}
+                        ${pokemon.ataque}
                     </div>
                 </div>
                 <div class="pokemonDefense pokemonStats">
@@ -45,7 +45,7 @@ const exibeDados = (name, img, health, attack, defense, speed, shiny) => {
                         Defense:
                     </div>
                     <div class="statsValues">
-                        ${defense}
+                        ${pokemon.defesa}
                     </div>
                 </div>
                 <div class="pokemonSpeed pokemonStats">
@@ -53,13 +53,13 @@ const exibeDados = (name, img, health, attack, defense, speed, shiny) => {
                         Speed:
                     </div>
                     <div class="statsValues">
-                        ${speed}
+                        ${pokemon.velocidade}
                     </div>
                 </div>
             </div>
             <div class="containerShinyVersion">
                 <figure class="containerShinyIcon">
-                    <img src="${shiny}" alt="shiny_pokemon" title="shiny_pokemon">
+                    <img src="${pokemon.shiny}" alt="shiny_pokemon" title="shiny_pokemon">
                 </figure>
             </div>
         </div>
@@ -78,11 +78,10 @@ const carregaPokemonShiny = async (id) =>{
     return shiny;
 }
 
-const pesquisaPokemon = async () => {
+const pesquisaPokemon = async (pokemonName) => {
     try{
-        let searchName = document.getElementById('pokemonSearch').value;
-        searchName = searchName.toLowerCase();
-        const url = `https://pokeapi.co/api/v2/pokemon/${searchName}/`;
+        pokemonName = pokemonName.toLowerCase();
+        const url = `https://pokeapi.co/api/v2/pokemon/${pokemonName}/`;
         const getApi = await fetch(url);
         const json = await getApi.json();
 
@@ -92,10 +91,21 @@ const pesquisaPokemon = async () => {
         const pokemonAttach = await json.stats[4].base_stat;
         const pokemonDefense = await json.stats[3].base_stat;
         const pokemonSpeed = await json.stats[0].base_stat;
-        const shiny = await carregaPokemonShiny(searchName);
+        const shiny = await carregaPokemonShiny(pokemonName);
 
         document.getElementById('containerPagina').innerHTML = "";
-        exibeDados(name, img, pokemonHealth, pokemonAttach, pokemonDefense, pokemonSpeed, shiny);
+
+        const pokemon = {
+            'name': name,
+            'img': img,
+            'vida': pokemonHealth,
+            'defesa': pokemonDefense,
+            'ataque': pokemonAttach,
+            'velocidade': pokemonSpeed,
+            'shiny': shiny
+        }
+
+        exibeDados(pokemon);
 
     }
     catch (exception_notFound_pokemon){
@@ -119,7 +129,17 @@ const carregaPokemons = async () =>{
         const pokemonSpeed = await json.stats[0].base_stat;
         const shiny = await carregaPokemonShiny(i);
 
-        exibeDados(name, img, pokemonHealth, pokemonAttach, pokemonDefense, pokemonSpeed, shiny);
+        const pokemon = {
+            'name': name,
+            'img': img,
+            'vida': pokemonHealth,
+            'defesa': pokemonDefense,
+            'ataque': pokemonAttach,
+            'velocidade': pokemonSpeed,
+            'shiny': shiny
+        }
+
+        exibeDados(pokemon);
 
         if (i == 100){
             document.getElementById('wait').style.display = 'none';
@@ -128,7 +148,10 @@ const carregaPokemons = async () =>{
 }
 
 carregaPokemons();
-document.getElementById('buttonPesquisar').addEventListener('click', pesquisaPokemon);
+document.getElementById('buttonPesquisar').addEventListener('click', pokemons => {
+    pokemonName = document.getElementById('pokemonSearch').value;
+    pesquisaPokemon(pokemonName);
+});
 document.getElementById('linkHomepage').addEventListener('click', e => {
     location.href = 'index.html';
 });

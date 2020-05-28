@@ -1,5 +1,8 @@
+# Créditos
+Trabalho realizado para a Instituição SENAI - Jandira. Projeto realizado para aprendizagem sobre consumo de APIs. Orientador: [Fernando Leonid](https://github.com/fernandoleonid)
+
 # Informações sobre a PokeAPI e o projeto
-A PokeAPI é uma API de pokemons, muito utilizada na internet para o desenvolvimento das famosas "POKEDEX", onde o usuário busca informações diversas sobre todos e qualquer pokemon na qual busca descobrir.
+A [PokeAPI](https://pokeapi.co/) é uma API de pokemons, muito utilizada na internet para o desenvolvimento das famosas "POKEDEX", onde o usuário busca informações diversas sobre todos e qualquer pokemon na qual busca descobrir.
 
 ## Documentação da PokeAPI
 A PokeAPI possui em sua documentação uma página que apresenta com tópicos separando os tipos de resultados que deseja encontrar, e as urls onde irá utilizar para encontrar. Além de informações sobre as diversas maneiras que se pode utilizar para realizar as buscas nas urls.
@@ -84,3 +87,5 @@ Também foi possível coletar informação sobre a versão shine do pokemon, ond
 Como possivel problema, podemos encontrar, se o usuário realizar uma busca por pokemon antes que a mensagem de que a página está sendo carregada suma da tela, pois, esta mensagem realmente informa que a tela ainda está carregando, e a pesquisa antecipada poderá gerar confusão de dados, travamento da página e até erro no console do navegador. Também temos como outro problema, a rolagem da tela enquanto ela ainda está carregando, oque gera quebra de página, demora no carregamento e leg.
 
 Para evitar estes problemas, espere até que a página esteja completamente carregada. Você saberá disso quando a mensagem de carregamento sumir da tela.
+
+Ainda aprensentando bugs ao tentar visualizar o último card da página.
