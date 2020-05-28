@@ -89,3 +89,5 @@ Como possivel problema, podemos encontrar, se o usuário realizar uma busca por 
 Para evitar estes problemas, espere até que a página esteja completamente carregada. Você saberá disso quando a mensagem de carregamento sumir da tela.
 
 Ainda aprensentando bugs ao tentar visualizar o último card da página.
+
+![Pokemon Pikachu](https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png) [PokeAPI](https://pokeapi.co/) ![Pokemon Pikachu](https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png)
