@@ -8,10 +8,11 @@
 </head>
 <body>
     <header>
+        <div id="wait">Aguarde, página ainda em carregamento.</div>
         <div id="containerMenu">
-            <h1>Search Pokemons Here!</h1>
+            <h1 id="linkHomepage">Search Pokemons Here!</h1>
             <div id="containerBarraDePesquisa">
-                <input type="text" id="pokemonSearch">
+                <input type="text" id="pokemonSearch" placeholder="Digite o Nome ou o número do Pokemon na pokedex">
                 <div id="buttonPesquisar">
                     Search
                 </div>
@@ -19,9 +20,12 @@
         </div>
     </header>
     <div id="containerPagina">
-
+        <h1 id="titleHome">TOP 100 Pokemons PokeAPI</h1>
     </div>
-
     <script src="js/script.js"></script>
+    <script src="js/effect.js"></script>
+    <footer>
+        Todos os direitos reservados&copy; a PokemonLTDA - Construido por Gabriel Augusto - SENAI JANDIRA
+    </footer>
 </body>
 </html>
