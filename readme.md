@@ -84,10 +84,12 @@ Também foi possível coletar informação sobre a versão shine do pokemon, ond
 ~~~
 
 ## Possiveis problemas
-Como possivel problema, podemos encontrar, se o usuário realizar uma busca por pokemon antes que a mensagem de que a página está sendo carregada suma da tela, pois, esta mensagem realmente informa que a tela ainda está carregando, e a pesquisa antecipada poderá gerar confusão de dados, travamento da página e até erro no console do navegador. Também temos como outro problema, a rolagem da tela enquanto ela ainda está carregando, oque gera quebra de página, demora no carregamento e leg.
+Como possivel problema, podemos encontrar, se o usuário realizar uma busca por pokemon antes que a mensagem de que a página está sendo carregada suma da tela, pois, esta mensagem realmente informa que a tela ainda está carregando, e a pesquisa antecipada poderá gerar confusão de dados, travamento da página e até erro no console do navegador.
 
 Para evitar estes problemas, espere até que a página esteja completamente carregada. Você saberá disso quando a mensagem de carregamento sumir da tela.
 
-Ainda aprensentando bugs ao tentar visualizar o último card da página.
+## Bugs Corrigidos
+- Aprensentando bugs ao tentar visualizar o último card da página.
+Este problema causava uma instabilidade na página impossibilitando que o usuário veja os últimos cards. O problema foi corrigido, pois havia um erro no overflow da página.
 
 ![Pokemon Pikachu](https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png) [PokeAPI](https://pokeapi.co/) ![Pokemon Pikachu](https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png)
